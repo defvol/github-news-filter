@@ -1,18 +1,24 @@
-const filters = [
-  '[class*=issues_]',
-  '[class*=push]'
-].join(',')
+const filters = {
+  issues: '[class*=issues_]',
+  push: '[class*=push]'
+}
 
 chrome.runtime.onMessage.addListener(clickListener)
 
 function clickListener (request, sender, sendResponse) {
-  if (request.message === 'clicked_browser_action') toggleFilter()
+  toggleFilter(request.checked, filters[request.value])
 }
 
-function toggleFilter () {
-  var issues = document.querySelectorAll(filters)
-  for (var i = 0, l = issues.length; i < l; ++i) {
-    var issue = issues[i]
-    issue.classList.toggle('hidden')
+/**
+ * Toggle element visibility
+ * @param {boolean} filter
+ * @param {string} selector
+ */
+function toggleFilter (filter, selector) {
+  var elements = document.querySelectorAll(selector)
+
+  for (var i = 0, l = elements.length; i < l; ++i) {
+    if (filter) elements[i].classList.add('hidden')
+    else elements[i].classList.remove('hidden')
   }
 }
