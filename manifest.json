@@ -7,15 +7,18 @@
       "background.js"
     ]
   },
+  "browser_action": {},
   "content_scripts": [
     {
-      "matches": [
-        "*://github.com/*"
+      "css": [
+        "content.css"
       ],
       "js": [
         "content.js"
+      ],
+      "matches": [
+        "*://github.com/*"
       ]
     }
-  ],
-  "browser_action": {}
+  ]
 }
