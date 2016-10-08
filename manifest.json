@@ -17,5 +17,8 @@
         "*://github.com/*"
       ]
     }
+  ],
+  "permissions": [
+    "storage"
   ]
 }
