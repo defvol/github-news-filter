@@ -4,6 +4,8 @@ Chrome Extension to filter out repo conversations from your news feed.
 
 ### How it works
 
+![filter](https://raw.githubusercontent.com/rodowi/github-news-filter/master/filter.gif)
+
 - When you click on the extension icon, `content.js` will toggle a `hidden` class on every `issues_*` DOM element.
 - Now you can skip conversations and check out starred projects or other cool stuff on your feed.
 - This only works on the `*github.com*` domain.
