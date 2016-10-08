@@ -1,3 +1,7 @@
+const filters = [
+  '[class*=issues_]',
+  '[class*=push]'
+].join(',')
 
 chrome.runtime.onMessage.addListener(clickListener)
 
@@ -6,7 +10,7 @@ function clickListener (request, sender, sendResponse) {
 }
 
 function toggleFilter () {
-  var issues = document.querySelectorAll('[class*=issues_]')
+  var issues = document.querySelectorAll(filters)
   for (var i = 0, l = issues.length; i < l; ++i) {
     var issue = issues[i]
     issue.classList.toggle('hidden')
