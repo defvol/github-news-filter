@@ -1,6 +1,8 @@
 const filters = {
   issues: '[class*=issues_]',
-  push: '[class*=push]'
+  member: '[class*=member_]',
+  push: '[class*=push]',
+  wiki: '[class*=gollum]'
 }
 
 // TODO: use chrome.storage
